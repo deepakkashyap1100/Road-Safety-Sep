@@ -1,0 +1,15 @@
+.blue-header {
+  padding: 4px 8px;
+  background-color: #525fe1 !important;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filter-sidebar {
+  position: fixed;
+  right: 0;
+  z-index: 9;
+  top: 70px;
+}
+

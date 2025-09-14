@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url('./assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  src: url('./assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('./assets//fonts/Lato/Lato-Regular.ttf') format('ttf');
+}
+
+body {
+  margin: 0;
+  background-color: #f6f7ff;
+  font-family: "Poppins", sans-serif;
+}
+
+
+p {
+  font-family: "Lato", sans-serif;
+}
+
+h6 {
+  font-family: "Poppins-SemiBold", sans-serif;
+  /* font-weight: 600; */
+}
+
+
+
+body,
+html {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.hide-scrollbar {
+  overflow-y: auto;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+
+
+
+
+
+:root {
+  --primaryColor: #286578;
+  --secondaryColor: #daf2fa;
+}
