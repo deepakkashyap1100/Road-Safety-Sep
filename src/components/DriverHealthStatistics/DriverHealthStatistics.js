@@ -12,11 +12,21 @@ import {
   FormControl,
   InputLabel,
   Typography,
+  Menu,
 } from "@mui/material";
 import { ThemeColors } from "../../ThemeColors";
 import { Fixedbox } from "../InputFields/Fixedbox";
+import { DataGrid, GridMoreVertIcon } from '@mui/x-data-grid';
 
 export default function DriverHealthStatistics() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   // Dropdown data
   const healthParameters = {
     Vision: [
@@ -75,6 +85,126 @@ export default function DriverHealthStatistics() {
     ? subOptions.filter((item) => item.name === selectedSubHealth)
     : subOptions;
 
+   const tableColumns = [
+     {
+        field: "Health Parameters",
+        headerName: "Health Parameters",
+        width: 270,
+        headerClassName: "health-table-header-style",
+        renderCell: (params) => (
+          <span>{params.row?.name || "N/A"}</span>
+       ),
+       //  flex: 1,
+
+      },
+     {
+        field: "No of cases",
+        headerName: "No of cases",
+        width: 150,
+        headerClassName: "health-table-header-style",
+        renderCell: (params) => (
+          <span>{params.row?.cases || "N/A"}</span>
+       ),
+        //  flex: 1
+         align: 'center',
+      },
+     {
+        field: "No of cases with co-morbidity",
+        headerName: "No of cases with co-morbidity",
+        width: 240,
+        headerClassName: "health-table-header-style",
+        renderCell: (params) => (
+          <span>{params.row?.coMorbidity || "N/A"}</span>
+       ),
+       //  flex: 1,
+         align: 'center',
+      },
+     {
+        field: "No of cases report as critical cases",
+        headerName: "No of cases report as critical cases",
+        width: 240,
+        headerClassName: "health-table-header-style",
+        renderCell: (params) => (
+          <span>{params.row?.critical || "N/A"}</span>
+       ),
+       //  flex: 1,
+         align: 'center',
+      },
+     {
+        field: "No of cases has improvements",
+        headerName: " No of cases has improvements",
+        width: 220,
+        headerClassName: "health-table-header-style",
+        renderCell: (params) => (
+          <span>{params.row?.improved || "N/A"}</span>
+       ),
+       //  flex: 1,
+         align: 'center',
+      },
+     {
+        field: "No of cases has no improvements",
+        headerName: "No of cases has no improvements",
+        width: 188,
+        headerClassName: "health-table-header-style",
+        renderCell: (params) => (
+          <span>{params.row?.notImproved || "N/A"}</span>
+       ),
+       //  flex: 1,
+         align: 'center',
+
+     },
+     {
+           field: "actions",
+           headerName: "Actions",
+           headerClassName: "health-table-header-style",
+           width: 120,
+           renderCell: (params) => {
+             return (
+               <>
+                 <div
+                   className="flex items-center justify-center  cursor-pointer"
+                   data-bs-toggle="dropdown"
+                 >
+                   <GridMoreVertIcon
+                     sx={{ color:"gray", cursor: "pointer", display:"flex" , justifyContent: "center" ,alignItems:"center",marginTop:2}}
+                     className="h-6 w-6"
+                      id="basic-button"
+                      aria-controls={open ? 'basic-menu' : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={open ? 'true' : undefined}
+                     onClick={handleClick}
+                        MenuProps={{
+                      disablePortal: true,
+                      disableScrollLock: true,
+                    }}
+                   />
+                 </div>
+                 {/* Dropdown Menu */}
+                 <Menu
+                   id="basic-menu"
+                   anchorEl={anchorEl}
+                   open={open}
+                   onClose={handleClose}
+                   slotProps={{
+                     list: {
+                       'aria-labelledby': 'basic-button',
+                     },
+                   }}
+                      MenuProps={{
+                      disablePortal: true,
+                      disableScrollLock: true,
+                    }}
+                 >
+                   <MenuItem onClick={handleClose}>Edit</MenuItem>
+                   <MenuItem onClick={handleClose}>Delete</MenuItem>
+                 </Menu>
+               </>
+             );
+           },
+         }
+
+    ];
+
   return (
     <div className="space">
       <div className="flex justify-between">
@@ -121,7 +251,7 @@ export default function DriverHealthStatistics() {
       </div>
 
       {/* Table */}
-      <TableContainer component={Paper} className="shadow-md rounded-lg">
+      {/* <TableContainer component={Paper} className="shadow-md rounded-lg">
         <Table>
           <TableHead>
             <TableRow className={`bg-[${ThemeColors.PrimaryColor}]`}>
@@ -159,7 +289,23 @@ export default function DriverHealthStatistics() {
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
+      </TableContainer> */}
+
+        <DataGrid
+              rows={filteredData}
+              loading={false}
+              columns={tableColumns}
+              pageSize={10}
+              autoHeight
+              pagination
+              getRowId={(row) => row.name}
+              initialState={{
+                pagination: {
+                  paginationModel: { pageSize: 10, page: 0 },
+                },
+              }}
+              pageSizeOptions={[10]}
+            />
     </div>
   );
 }

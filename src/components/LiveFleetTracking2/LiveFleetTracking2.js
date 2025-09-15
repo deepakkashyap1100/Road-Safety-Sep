@@ -164,7 +164,9 @@ export default function LiveFleetTracking2() {
         item.issues.some((i) =>
           i.toLowerCase().includes(searchTerm.toLowerCase())
         )
-    ).filter((item) => item.category == category);
+  ).filter((item) => item.category == category);
+
+
 
   return (
     <div className="space">
@@ -275,7 +277,6 @@ export default function LiveFleetTracking2() {
                     color: `${ThemeColors.PrimaryColor}`
                   }}
                   onClick={() => setDashcmVideo(true)}
-
                 >
                   <GoDotFill className="inline " fill='red' size="20" />
                   DASHCAM LIVE
@@ -363,7 +364,7 @@ export default function LiveFleetTracking2() {
         aria-describedby="alert-dialog-description"
       >
         <div id="alert-dialog-description" >
-          <AccidentDashboard />
+          <AccidentDashboard closeValue={handleClose} />
         </div>
       </Dialog>
       {/* ==================DashcmVideo=Popup================== */}
@@ -373,7 +374,7 @@ export default function LiveFleetTracking2() {
         aria-describedby="DashcmVideoPopup"
       >
         <div id="DashcmVideoPopup">
-          <LiveDaschameVideo />
+          <LiveDaschameVideo closeValue={ setDashcmVideo } />
         </div>
       </Dialog>
 

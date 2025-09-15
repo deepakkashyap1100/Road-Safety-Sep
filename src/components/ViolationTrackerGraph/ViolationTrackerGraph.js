@@ -23,13 +23,12 @@ export default function ViolationTrackerGraph() {
   // Sample data sets
   const dataSets = {
     Weekly: [
-      { day: "Mon", violations: 280 },
-      { day: "Tue", violations: 320 },
-      { day: "Wed", violations: 210 },
-      { day: "Thur", violations: 460, high: true },
-      { day: "Fri", violations: 400 },
-      { day: "Sat", violations: 270 },
-      { day: "Sun", violations: 120 },
+      { day: "week 1", violations: 20 },
+      { day: "week 2", violations: 320 },
+      { day: "week 3", violations: 60 },
+      { day: "week 4", violations: 460, high: true },
+      { day: "week 5", violations: 540 },
+
     ],
     Daily: [
       { day: "8AM", violations: 50 },
@@ -41,24 +40,32 @@ export default function ViolationTrackerGraph() {
       { day: "8PM", violations: 80 },
     ],
     Monthly: [
-      { day: "Week 1", violations: 600, high: true },
-      { day: "Week 2", violations: 450 },
-      { day: "Week 3", violations: 700, high: true },
-      { day: "Week 4", violations: 500, high: true },
-    ],
-      Yearly: [
-    { day: "Jan", violations: 320 },
+     { day: "Jan", violations: 320 },
     { day: "Feb", violations: 280 },
-    { day: "Mar", violations: 450, high: true },
+    { day: "Mar", violations: 50, high: true },
     { day: "Apr", violations: 390 },
-    { day: "May", violations: 520, high: true },
+    { day: "May", violations: 20, high: true },
     { day: "Jun", violations: 410 },
     { day: "Jul", violations: 610, high: true },
-    { day: "Aug", violations: 480 },
+    { day: "Aug", violations: 180 },
     { day: "Sep", violations: 350 },
     { day: "Oct", violations: 570, high: true },
     { day: "Nov", violations: 430 },
     { day: "Dec", violations: 680, high: true },
+    ],
+      Yearly: [
+    { day: "2001", violations: 320 },
+    { day: "2002", violations: 280 },
+    { day: "2003", violations: 450, high: true },
+    { day: "2004", violations: 390 },
+    { day: "2005", violations: 520, high: true },
+    { day: "2006", violations: 410 },
+    { day: "2007", violations: 610, high: true },
+    { day: "2008", violations: 480 },
+    { day: "2009", violations: 350 },
+    { day: "2010", violations: 570, high: true },
+    { day: "2011", violations: 430 },
+    { day: "2012", violations: 680, high: true },
   ],
   };
 

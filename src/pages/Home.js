@@ -24,7 +24,7 @@ const Home = () => {
       <Overview />
       <DriveRatingQuickAction/>
       <LiveFleetTracking2 />
-      {/* <DangerousDriving/>
+      <DangerousDriving/>
       <ViolationTracker/>
       <ViolationTrackerGraph/>
       <FitnessAssessment />
@@ -32,8 +32,8 @@ const Home = () => {
       <HealthAssessment />
       <DriverHealthStatistics />
       <TopVioletears />
-      <ImpactStudy /> */}
-    
+      <ImpactStudy />
+
     </>
   )
 }

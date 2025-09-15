@@ -13,3 +13,13 @@
   top: 70px;
 }
 
+.health-table-header-style {
+  background-color: #286578 !important;
+  padding: 4px 8px;
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  /* flex: 1 */
+
+}

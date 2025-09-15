@@ -2,14 +2,10 @@ import React, { useState } from "react";
 import { MdOutlinePhone } from "react-icons/md";
 import { TbCopy } from "react-icons/tb";
 import { ThemeColors } from "../ThemeColors";
+import { IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 
-// import Button from '@mui/material/Button';
-// import Dialog from '@mui/material/Dialog';
-// import DialogActions from '@mui/material/DialogActions';
-// import DialogContent from '@mui/material/DialogContent';
-// import DialogContentText from '@mui/material/DialogContentText';
-// import DialogTitle from '@mui/material/DialogTitle';
 
 const contacts = [
   {
@@ -44,12 +40,16 @@ const contacts = [
   },
 ];
 
-export default function AccidentDashboard() {
+export default function AccidentDashboard({closeValue}) {
   const [message, setMessage] = useState("");
-
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 max-w-[680px] mx-auto">
+        <div className="flex justify-end pb-3 mt-[-10px]">
+           <IconButton size="small" className="x-icon" onClick={()=>closeValue(false)}>
+            <CloseIcon />
+          </IconButton>
+        </div>
       <div className="grid grid-cols-3 gap-4 mb-2">
         {contacts.map((contact, idx) => (
           <div
@@ -60,15 +60,15 @@ export default function AccidentDashboard() {
             <div className="flex items-center w-full mb-2">
               <h4 className="text-md  text-gray-950">{contact.title}</h4>
               <div>
-              {contact.emergency && (
-                <span className="absolute right-2 top-4">
-                  <span className="inline-block w-3 h-3 rounded-full bg-red-600"></span>
-                </span>
-              )}
+                {contact.emergency && (
+                  <span className="absolute right-2 top-4">
+                    <span className="inline-block w-3 h-3 rounded-full bg-red-600"></span>
+                  </span>
+                )}
               </div>
             </div>
             <div className="flex items-center text-gray-600 text-sm mb-3">
-             <MdOutlinePhone className="inline" />
+              <MdOutlinePhone className="inline" />
               <span>{contact.phone}</span>
             </div>
             <div className="flex justify-between gap-3 w-full">
@@ -79,7 +79,7 @@ export default function AccidentDashboard() {
                 Call
               </button>
               <button className={`bg-white border-2 border-[${ThemeColors.PrimaryColor}] text-gray-600 text-sm px-2 py-1 rounded w-full flex justify-center`}>
-               <TbCopy />
+                <TbCopy />
               </button>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function AccidentDashboard() {
       </div>
       <div className="mt-3 mb-4 flex items-start">
         <div>
-        <span className="inline-block w-3 h-3 bg-red-600 rounded-full mr-2"></span>
+          <span className="inline-block w-3 h-3 bg-red-600 rounded-full mr-2"></span>
         </div>
         <p className="text-gray-900 text-xs ">
           A red dot indicates an emergency requiring immediate help. If it's not an emergency, please use a different contact number.
@@ -105,17 +105,12 @@ export default function AccidentDashboard() {
           onChange={e => setMessage(e.target.value)}
         />
         <button
-          className="block w-full text-white text-lg rounded py-2 font-semibold"
+          className="block  text-white text-lg rounded py-2  px-5"
           style={{ backgroundColor: "#286578" }}
         >
           Message Boardcast
         </button>
       </div>
-
-
-
-
-
     </div>
   );
 }
