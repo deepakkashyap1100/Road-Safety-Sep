@@ -237,7 +237,7 @@ export default function LiveFleetTracking2() {
           infinite={true}
           renderDotsOutside={true}
           partialVisible={true}
-          className='ps-0'
+          className='ps-0 pb-3'
         >
           {filteredData.map((item) => (
             <div
