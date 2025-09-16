@@ -55,7 +55,7 @@ export default function DonutScore({ driverScore, vehicleScore, behaviourScore, 
             Score
           </p> */}
           <div className="total-score bg-[#8ea500] rounded-full p-2 h-[65px] ">
-              <div className="text-white   text-center "><div className="text-[10px] pt-2">Total Score</div> <span className="font-bold text-[12px]">{totalScore}</span> </div>
+            <div className="text-white   text-center "><div className="text-[10px] pt-2">Total Score</div> <span className="font-bold text-[12px]">{totalScore}</span> </div>
           </div>
 
         </div>

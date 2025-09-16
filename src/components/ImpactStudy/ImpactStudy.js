@@ -62,7 +62,7 @@ export default function ImpactStudy() {
 
             {/* Icon */}
             <div className="bg-[#def7ff] p-3 rounded-full">
-              <LineChart className="w-6 h-6 text-gray-800"  />
+              <LineChart className="w-6 h-6 text-gray-800" />
             </div>
           </div>
         ))}

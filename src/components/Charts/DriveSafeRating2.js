@@ -59,9 +59,8 @@ const DriveSafeRating2 = ({ rank = 12, lastYearRank = 16, change = 7 }) => {
       <p className="text-gray-600 mt-2">
         Changes from last year{" "}
         <span
-          className={`font-semibold ${
-            change >= 0 ? "text-blue-600" : "text-red-600"
-          }`}
+          className={`font-semibold ${change >= 0 ? "text-blue-600" : "text-red-600"
+            }`}
         >
           {change >= 0 ? `+${change}%` : `${change}%`}
         </span>

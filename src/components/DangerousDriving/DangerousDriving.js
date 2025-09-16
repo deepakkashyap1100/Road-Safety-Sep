@@ -50,23 +50,23 @@ const DangerousDriving = () => {
     // centerMode: true,
     //  centerPadding: "70px",
     // leftPadding: '10px',
-   responsive: [
-    {
-      breakpoint: 1024, // tablet & below
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024, // tablet & below
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
       },
-    },
-    {
-      breakpoint: 600, // mobile
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true,
+      {
+        breakpoint: 600, // mobile
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+        },
       },
-    },
-  ],
+    ],
 
   };
   return (
@@ -117,6 +117,7 @@ const DangerousDriving = () => {
                         <p className={`p-2 bg-[${ThemeColors.secondColor}] rounded`}>UP16 AA 3456</p>
                       </div>
                     </div>
+                    <div> 
                     <div className="grid grid-cols-2 gap-3 mb-3 ">
                       <div>
                         <p className='mb-1  text-xs text-gray-500'>Duty Conductor</p>
@@ -151,6 +152,7 @@ const DangerousDriving = () => {
                           </div>
                         </p>
                       </div>
+                    </div>
                     </div>
                   </div>
                 </div>

@@ -5,8 +5,8 @@ import { Bar, Doughnut } from "react-chartjs-2";
 export default function DonutChart4() {
   return (
     <>
-    
-      <Doughnut 
+
+      <Doughnut
         data={{
           labels: ['A', 'B', 'C', 'D'], // 4 labels
           datasets: [

@@ -1,11 +1,11 @@
 import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 
 export default function DriveSafeRating({ rank, lastYearRank, changePercent }) {
-  const percentage = Math.max(0, Math.min(100, (100 - rank))); 
+  const percentage = Math.max(0, Math.min(100, (100 - rank)));
 
   // Gauge chart data
   const data = [
-    { value: 100, fill: "#e5e7eb" }, 
+    { value: 100, fill: "#e5e7eb" },
     { value: percentage, fill: percentage > 70 ? "#22c55e" : percentage > 40 ? "#facc15" : "#ef4444" },
   ];
 

@@ -85,37 +85,37 @@ const DriverHabits = () => {
     },
   ];
 
-  const SelectCityes=      [
-            {
-            label: 'Ghaziabad',
-            value:'ghaziabad'
-          },
-            {
-            label: 'Lucknow',
-            value:'lucknow'
-          },
-            {
-            label: 'Delhi',
-            value:'delhi'
-          },
+  const SelectCityes = [
+    {
+      label: 'Ghaziabad',
+      value: 'ghaziabad'
+    },
+    {
+      label: 'Lucknow',
+      value: 'lucknow'
+    },
+    {
+      label: 'Delhi',
+      value: 'delhi'
+    },
 
-            ]
+  ]
 
   return (
     <div className="space ">
       <div className="flex justify-between items-center mb-4">
-            <div>
-             <h2 className="lg:text-[30px] font-bold pb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Driver Lifestyle & Wellness Summary</h2>
+        <div>
+          <h2 className="lg:text-[30px] font-bold pb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Driver Lifestyle & Wellness Summary</h2>
         </div>
         <div className="w-[200px]">
-        <SelectInput
-          value={selectedDepot}
-          onChange={(e) => setSelectedDepot(e.target.value)}
+          <SelectInput
+            value={selectedDepot}
+            onChange={(e) => setSelectedDepot(e.target.value)}
             label2={'Ro/Depo'}
             label={'Ro/Depo'}
-          menuProps={Fixedbox}
-          MenuItems={SelectCityes}
-        />
+            menuProps={Fixedbox}
+            MenuItems={SelectCityes}
+          />
         </div>
       </div>
 

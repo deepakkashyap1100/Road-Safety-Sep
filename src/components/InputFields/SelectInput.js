@@ -18,6 +18,7 @@ const SelectInput = (
     MenuItems,
     className,
     fullWidth,
+    sx
   }
 ) => {
 
@@ -34,6 +35,7 @@ const SelectInput = (
           label={label}
           MenuProps={Fixedbox}
           className={className}
+          sx={sx}
         >
           {
             MenuItems?.map((menu) => {

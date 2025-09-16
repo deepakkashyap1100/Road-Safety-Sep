@@ -6,7 +6,7 @@ export default function QuickActions({ actions }) {
       {/* Header */}
       <div className="flex justify-between items-center p-2 pb-2 mb-2">
         <h3 className="text-[#286578] text-[16px] mb-0">Quick Actions</h3>
-        <span className="text-[#286578]"><TfiAngleRight  /></span>
+        <span className="text-[#286578]"><TfiAngleRight /></span>
       </div>
       <div className="border-top pb-1"></div>
       {/* Action Buttons */}

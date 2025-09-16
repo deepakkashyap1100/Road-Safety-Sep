@@ -29,9 +29,8 @@ const DriveSafeRating3 = () => {
       <p className="text-gray-600 mb-0">
         Changes from last year{" "}
         <span
-          className={`font-semibold ${
-            change >= 0 ? "text-blue-600" : "text-red-600"
-          }`}
+          className={`font-semibold ${change >= 0 ? "text-blue-600" : "text-red-600"
+            }`}
         >
           {change >= 0 ? `+${change}%` : `${change}%`}
         </span>

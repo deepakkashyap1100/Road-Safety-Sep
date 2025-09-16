@@ -30,6 +30,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import AccidentDashboard from "../../UI/AccidentDashboard";
 import VehicleStatusDashboard from "../../UI/VehicleStatusDashorard";
 import LiveDaschameVideo from "../../UI/LiveDaschameVideo";
+import SelectInput from "../InputFields/SelectInput";
 
 
 const fleetData = [
@@ -166,7 +167,13 @@ export default function LiveFleetTracking2() {
         )
   ).filter((item) => item.category == category);
 
-
+const menuItems = [
+  { label: "all", value: "all" },
+  { label: "SOS", value: "SOS" },
+  { label: "Over-speeding", value: "over-speeding" },
+  { label: "Fatigue", value: "fatigue" },
+  { label: "Distracted Driving", value: "distracted-driving" }
+];
 
   return (
     <div className="space">
@@ -192,30 +199,23 @@ export default function LiveFleetTracking2() {
           />
 
           {/* Sort */}
-          <FormControl size="small">
-
-            <Select
-              className="!min-w-[140px]"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              sx={{
+          <div>
+          <SelectInput
+            size={'small'}
+            value={ category}
+            onChange={(e) => setCategory(e.target.value)}
+            MenuItems={ menuItems}
+            sx={{
                 bgcolor: '#286578',
                 textTransform: "capitalize",
                 fontFamily: "Lato, sans-serif ",
                 color: '#ffffff'
-              }}
-              MenuProps={{
-                disablePortal: true,
-                disableScrollLock: true,
-              }}
-            >
-              <MenuItem value="all">all</MenuItem>
-              <MenuItem value="SOS">SOS</MenuItem>
-              <MenuItem value="over-speeding">Over-speeding</MenuItem>
-              <MenuItem value="fatigue">Fatigue</MenuItem>
-              <MenuItem value="distracted-driving">Distracted Driving</MenuItem>
-            </Select>
-          </FormControl>
+            }}
+             // className={"!min-w-[110px]"}
+            // label={ 'Sort By :'}
+            // label2={ 'Sort By :'}
+          />
+          </div>
         </div>
       </div>
 

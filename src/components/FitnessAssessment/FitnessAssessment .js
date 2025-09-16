@@ -45,12 +45,11 @@ const FitnessAssessment = () => {
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
-            className={`px-4 py-3 rounded-lg font-medium   ${
-              activeTab === tab.key
+            className={`px-4 py-3 rounded-lg font-medium   ${activeTab === tab.key
                 ? `bg-[${ThemeColors.PrimaryColor}] text-white font-semibold`
                 : `bg-[${ThemeColors.secondColor}] text-gray-900 hover:bg-[${ThemeColors.PrimaryColor}] hover:text-[#fff] font-semibold`
               }`}
-            style={{fontFamily:"Poppins-SemiBold, sans-serif"}}
+            style={{ fontFamily: "Poppins-SemiBold, sans-serif" }}
           >
             {tab.label}
           </button>
